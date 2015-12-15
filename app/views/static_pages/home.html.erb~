@@ -1,8 +1,9 @@
 <% provide(:title,"首页") %>
 
-<h1>校缘</h1>
 <p>
   这是个为了学生的网站
   <a href="#">校缘</a>
 </p>
 
+</body>
+</html>
