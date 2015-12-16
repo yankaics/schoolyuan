@@ -1,1 +1,4 @@
-#empty
+sunkun:
+   name: 孙琨
+   email: sunkun201309@163.com
+   password_digest: <%= User.digest('password') %>

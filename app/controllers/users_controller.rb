@@ -11,6 +11,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      log_in @user
       flash[:success] = "欢迎来到校缘！让我们缘起校园"
       redirect_to @user
     else
