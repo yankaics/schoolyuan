@@ -9,7 +9,8 @@ class SessionsController < ApplicationController
       log_in user
       params[:session][:remember_me] == '1' ? remember(user) : forget(user)
       # remember user
-      redirect_to user
+      # redirect_to user
+      redirect_back_or user
     else
       # 创建一个错误消息
       flash.now[:danger] = '邮箱或密码错误' #不完全正确

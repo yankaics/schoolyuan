@@ -2,3 +2,16 @@ sunkun:
    name: 孙琨
    email: sunkun201309@163.com
    password_digest: <%= User.digest('password') %>
+   admin: true
+
+likaifu:
+   name: 李开复
+   email: likaifu@163.com
+   password_digest: <%= User.digest('password') %>
+
+<% 35.times do |n| %>
+user_<%= n %>:
+  name: <%= "User #{n}" %>
+  email: <%= "user-#{n}@163.com" %>
+  password_digest: <%= User.digest('password') %>
+<% end %>
