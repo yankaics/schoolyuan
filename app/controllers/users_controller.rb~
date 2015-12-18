@@ -20,9 +20,14 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      UserMailer.account_activation(@user).deliver_now
+      flash[:info] = "邮件已发送至您的邮箱，请查收邮件以便激活您的账号"
+      redirect_to root_url
+=begin
       log_in @user
       flash[:success] = "欢迎来到校缘！让我们缘起校园"
       redirect_to @user
+=end
     else
       render 'new'
     end
@@ -70,5 +75,10 @@ class UsersController < ApplicationController
     def correct_user
       @user = User.find(params[:id])
       redirect_to(root_url) unless current_user?(@user)
+    end
+
+    # 确保是管理员
+    def admin_user
+      redirect_to(root_url) unless current_user.admin?
     end
 end

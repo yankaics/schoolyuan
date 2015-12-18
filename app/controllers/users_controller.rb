@@ -20,9 +20,14 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      @user.send_activation_email
+      flash[:info] = "邮件已发送至您的邮箱，请查收邮件以便激活您的账号"
+      redirect_to root_url
+=begin
       log_in @user
       flash[:success] = "欢迎来到校缘！让我们缘起校园"
       redirect_to @user
+=end
     else
       render 'new'
     end

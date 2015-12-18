@@ -3,15 +3,21 @@ sunkun:
    email: sunkun201309@163.com
    password_digest: <%= User.digest('password') %>
    admin: true
+   activated: true
+   activated_at: <%= Time.zone.now %>
 
 likaifu:
    name: 李开复
    email: likaifu@163.com
    password_digest: <%= User.digest('password') %>
+   activated: true
+   activated_at: <%= Time.zone.now %>
 
 <% 35.times do |n| %>
 user_<%= n %>:
   name: <%= "User #{n}" %>
   email: <%= "user-#{n}@163.com" %>
   password_digest: <%= User.digest('password') %>
+  activated: true
+  activated_at: <%= Time.zone.now %>
 <% end %>
