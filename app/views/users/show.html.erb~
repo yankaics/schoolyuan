@@ -8,5 +8,9 @@
       </h1>
     </section>
   </aside>
-</div>
+  <div class="col-md-8">
+    <% if @user.microposts.any? %>
+      <h3>发帖 (<%= @user.microposts.count %>)</h3>
+      <ol class="microposts">
 
+</div>

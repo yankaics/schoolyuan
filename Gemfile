@@ -3,6 +3,12 @@ source "https://ruby.taobao.org"
 gem 'rails', '4.2.0'
 gem 'bcrypt', '3.1.7' # 加密
 gem 'faker', '1.4.2' # 批量输入用户
+
+gem 'net-ssh' # 安全性验证，处理图片必要
+gem 'carrierwave', '0.10.0' # 处理图片上传，并把图片和微博模型关联起来
+gem 'mini_magick', '3.8.0' # 调整图片尺寸
+gem 'fog', '1.23.0' # 用于在生产环境中上传图片
+
 gem 'will_paginate', '3.0.7' # 分页
 gem 'bootstrap-will_paginate', '0.0.10'
 gem 'bootstrap-sass', '3.2.0.0' # 版式
