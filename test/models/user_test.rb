@@ -61,4 +61,35 @@ class UserTest < ActiveSupport::TestCase
       @user.destroy
     end
   end
+
+=begin
+  test "should follow and unfollow a user" do
+    sunkun = users(:sunkun)
+    likaifu = users(:likaifu)
+     assert_not sunkun.following?(likaifu)
+    sunkun.follow(likaifu)
+    assert sunkun.following?(likaifu)
+    assert likaifu.followers.include?(sunkun)
+    sunkun.unfollow(likaifu)
+    assert_not sunkun.following?(likaifu)
+  end
+
+  test "feed should have the right posts" do
+    sunkun = users(:sunkun)
+    likaifu = users(:likaifu)
+    lana = users(:lana)
+    # 关注的用户发布的微博
+    lana.microposts.each do |post_following|
+      assert sunkun.feed.include?(post_following)
+    end
+    # 自己的微博
+    sunkun.microposts.each do |post_self|
+      assert sunkun.feed.include?(post_self)
+    end
+    # 未关注用户的微博
+    likaifu.microposts.each do |post_unfollowed|
+      assert_not sunkun.feed.include?(post_unfollowed)
+    end
+  end
+=end
 end
