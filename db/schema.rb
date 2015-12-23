@@ -48,6 +48,18 @@ ActiveRecord::Schema.define(version: 20151219141359) do
     t.datetime "activated_at"
     t.string   "reset_digest"
     t.datetime "reset_sent_at"
+    t.string   "gender"
+    t.string   "age"
+    t.string   "height"
+    t.string   "hometown"
+    t.string   "constellation"
+    t.boolean  "married_info"
+    t.boolean  "in_love_info"
+    t.text     "expected_lover"
+    t.string   "edu_finished"
+    t.string   "final_edu_school"
+    t.string   "school_now"
+    t.string   "school_now_loc"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
