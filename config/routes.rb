@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   # 用户
   resources :users do 
     member do
-      get :following, :followers
+      get :following, :followers, :settings
     end
   end
 

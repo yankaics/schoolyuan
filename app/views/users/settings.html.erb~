@@ -187,7 +187,7 @@ function controlDIV(btn)
         </div>
         <div style="display:none" id="account" class="column two-thirds">
           <%= form_for(@user) do |f| %>
-          <%=render 'shared/error_messages', object: f.object %>
+          <%= render 'shared/error_messages' %>
           <%= f.label :name %>
           <%= f.text_field :name %>
           <%= f.label :email %>
@@ -201,7 +201,7 @@ function controlDIV(btn)
         </div>
         <div style="display:none" id="love" class="column two-thirds">
           <%= form_for(@user) do |f| %>
-          <%=render 'shared/error_messages', object: f.object %>
+          <%= render 'shared/error_messages' %>
           <%= f.label :lover %>
           <%= f.text_field :name %>
           <%= f.label :email %>
@@ -215,7 +215,7 @@ function controlDIV(btn)
         </div>
         <div style="display:none" id="biogra" class="column two-thirds">
           <%= form_for(@user) do |f| %>
-          <%=render 'shared/error_messages', object: f.object %>
+          <%= render 'shared/error_messages' %>
           <%= f.label :college %>
           <%= f.text_field :name %>
           <%= f.label :email %>

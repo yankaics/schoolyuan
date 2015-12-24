@@ -34,6 +34,10 @@ class UsersController < ApplicationController
     end
   end
 
+  def settings
+    @user = User.find(params[:id])
+  end
+
   def edit
     # @user = User.find(params[:id]) # correct已定义
   end
