@@ -6,6 +6,7 @@ class Micropost < ActiveRecord::Base
   validates :content, presence: true, length: { maximum: 140 }
   validate :picture_size
 
+  has_many :commments
   private
    
     # 验证上传的图片大小
