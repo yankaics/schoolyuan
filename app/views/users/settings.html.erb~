@@ -2,7 +2,13 @@
 <!-- saved from url=(0035)https://github.com/settings/profile -->
 <html lang="en" class=" is-u2f-enabled">
 <!--HEAD!!!!!!!!!!!!!!!!!!!!!!!11!!!111!!!11!!!!11!!!1hcjhvjvjdvfjdfgvujdfvidvfjdvgjdvfjd-->
-  <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# object: http://ogp.me/ns/object# article: http://ogp.me/ns/article# profile: http://ogp.me/ns/profile#"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# object: http://ogp.me/ns/object# article: http://ogp.me/ns/article# profile: http://ogp.me/ns/profile#">
+
+    <style type="text/css">
+      #ym {float:left;width:25%;}
+      #my {float:right;width:70%;}
+    </style>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="Content-Language" content="en">
@@ -151,7 +157,7 @@ function controlDIV(btn)
 <div class="page-content container">
   <div class="columns">
 <!--25% DAO HANG-->    
-<div class="column one-fourth" role="navigation">
+<div id="ym" class="column one-fourth" role="navigation">
   <nav class="menu" data-pjax="">
     <h3 class="menu-heading">
       Personal settings
@@ -166,7 +172,7 @@ function controlDIV(btn)
 
 
 <!--75% NEI RONG--> 
-<div id="my", class="column three-fourths">
+<div  id="my", class="column three-fourths">
   <div class="boxed-group">
     <h3>Basic Profile</h3>
     <div  style="" class="boxed-group-inner clearfix">
@@ -176,18 +182,18 @@ function controlDIV(btn)
           <%=render 'shared/error_messages', object: f.object %>
           <%= f.label :gender %>
           <%= f.text_field :name %>
-          <%= f.label :email %>
+          <%= f.label :sex %>
           <%= f.text_field :email %>
-          <%= f.label :password %>
+          <%= f.label :height %>
           <%= f.password_field :password %>
-          <%= f.label :password_confirmation, "Confirm Password" %>
+          <%= f.label :hometown %>
           <%= f.password_field :password_confirmation %>
           <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
           <% end %>
         </div>
         <div style="display:none" id="account" class="column two-thirds">
           <%= form_for(@user) do |f| %>
-          <%= render 'shared/error_messages' %>
+          <%=render 'shared/error_messages', object: f.object %>
           <%= f.label :name %>
           <%= f.text_field :name %>
           <%= f.label :email %>
@@ -201,28 +207,26 @@ function controlDIV(btn)
         </div>
         <div style="display:none" id="love" class="column two-thirds">
           <%= form_for(@user) do |f| %>
-          <%= render 'shared/error_messages' %>
-          <%= f.label :lover %>
+          <%=render 'shared/error_messages', object: f.object %>
+          <%= f.label :loved? %>
           <%= f.text_field :name %>
-          <%= f.label :email %>
+          <%= f.label :married? %>
           <%= f.text_field :email %>
-          <%= f.label :password %>
+          <%= f.label :expected? %>
           <%= f.password_field :password %>
-          <%= f.label :password_confirmation, "Confirm Password" %>
-          <%= f.password_field :password_confirmation %>
           <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
           <% end %>
         </div>
         <div style="display:none" id="biogra" class="column two-thirds">
           <%= form_for(@user) do |f| %>
-          <%= render 'shared/error_messages' %>
+          <%=render 'shared/error_messages', object: f.object %>
           <%= f.label :college %>
           <%= f.text_field :name %>
-          <%= f.label :email %>
+          <%= f.label :edu %>
           <%= f.text_field :email %>
-          <%= f.label :password %>
+          <%= f.label :college_now %>
           <%= f.password_field :password %>
-          <%= f.label :password_confirmation, "Confirm Password" %>
+          <%= f.label :college_location %>
           <%= f.password_field :password_confirmation %>
           <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
           <% end %>
