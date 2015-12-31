@@ -1,0 +1,4 @@
+<!---显示关注或取消关注表单的局部视图---->
+
+<% unless current_user?(@user) %>
+  <div id="follow_form">

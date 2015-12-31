@@ -1,0 +1,41 @@
+<% if logged_in? %>
+  <% provide(:title, "好友动态") %>
+  <div class="row">
+    <aside class="col-md-4">
+      <section class="user_info">
+        <%= render 'shared/user_info' %>
+      </section>
+      <section class="stats">
+        <%= render 'shared/stats' %>
+      </section>
+      <section class="micropost_form">
+        <%= render 'shared/micropost_form' %>
+      </section>
+    </aside>
+    <div class="col-md-8">
+      <h3>微博列表</h3>
+      <%= render 'shared/feed' %>
+    </div>
+  </div>
+<% else %>
+  <% provide(:title, "首页") %>
+  <div class="center jumbotron"
+    <h1>欢迎来到校缘</h1>
+
+    <h2>
+       缘起校园，寻找你的缘分
+       <a href="#">校缘</a>
+    </h2>
+ 
+    <%= link_to "马上注册!",signup_path,class: "btn btn-lg btn-primary" %>
+   </div>
+
+   <!------ <%= link_to image_tag("todayRole.jpg",alt:"xiaoyuan logo"),'#' %>------>
+   <%= link_to image_tag("学生1.jpg",alt:"student 1"),'http://localhost:3000/users/5' %>
+   <%= link_to image_tag("学生2.jpg",alt:"student 2"),'http://localhost:3000/users/6' %>
+   <%= link_to image_tag("学生3.jpg",alt:"student 3"),'http://localhost:3000/users/7' %>
+   <%= link_to image_tag("学生4.jpg",alt:"student 4"),'http://localhost:3000/users/8' %>
+   <!-------<%= link_to image_tag("学生5.jpg",alt:"student 5"),'#' %>--------->
+
+
+<% end %>

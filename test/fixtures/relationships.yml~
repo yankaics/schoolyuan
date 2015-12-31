@@ -1,0 +1,7 @@
+# 关系固件
+one:
+  follower: sunkun
+  followed: likaifu
+
+two:
+  follower: 
