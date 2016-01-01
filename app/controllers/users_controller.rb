@@ -72,6 +72,32 @@ class UsersController < ApplicationController
     @users = @user.followers.paginate(page: params[:page])
     render 'show_follow'
   end
+
+  #条件查询好友
+  def searchfriends
+    sex=params[:result][:sex]
+    from_height=params[:result][:from_height]
+    to_height=params[:result][:to_height]
+    from_weight=params[:result][:from_weight]
+    to_weight=params[:result][:to_weight]
+    from_age=params[:result][:from_age]
+    to_age=params[:result][:to_age]
+
+
+    @friends =  sex=="" ? User.all : User.where("sex= ? ",sex)
+    @friends = from_height=="" || to_height=="" ? @friends : @friends.where("height BETWEEN ? AND ? ", from_height, to_height)
+
+    ##@friends = from_weight=="" || to_weight=="" ? @friends : @friends.where("weight BETWEEN ? AND ? ", from_weight, to_weight)
+
+    @friends = from_age=="" || to_age=="" ? @friends : @friends.where("age BETWEEN ? AND ? ", from_age, to_age)
+
+
+    respond_to do |format|
+      format.js
+    end
+
+  end
+
   private
     def user_params
       params.require(:user).permit(:name, :email, :password,
