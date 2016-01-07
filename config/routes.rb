@@ -19,14 +19,22 @@ Rails.application.routes.draw do
   # 用户
   resources :users do 
     member do
-      get :following, :followers, :settings, :update
-      post :settings
+      get :following, :followers
+      get :settings 
+     post :update_settings
     end
+  end
+
+
+  namespace :settings do
+    resource :account, only: [:show, :update]
+    resource :basic, only: [:show, :update]
+    resource :love, only: [:show, :update]
+    resource :background, only: [:show, :update]
   end
 
   resources :account_activations, only: [:edit] # 账号激活
   resources :password_resets, only: [:new, :create, :edit, :update]
   resources :microposts, only:[:create, :destroy]
   resources :relationships, only:[:create, :destroy]
-  resources :settings, only: [:new, :create, :edit, :update]
 end

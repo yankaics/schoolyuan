@@ -138,8 +138,7 @@ function controlDIV(btn)
     <h3 style="display:none" id="lf">Love Fairs</h3>
     <h3 style="display:none" id="bg">Background</h3>
     <div  id="aa" class="boxed-group-inner clearfix">
-      <form accept-charset="UTF-8" action="https://github.com/users/dorbodwolf" class="columns js-uploadable-container js-upload-avatar-image is-default" data-alambic-owner-id="14366375" data-alambic-owner-type="User" data-form-nonce="4913234466e0b35d199ac795826b28f88f628fb3" data-upload-policy-url="/upload/policies/avatars" id="profile_14366375" method="post">
-        
+
         <div style="display:block " id="basic" class="column two-thirds">
           <%= form_for(@user) do |f| %>
           <%=render 'shared/error_messages', object: f.object %>
@@ -196,7 +195,6 @@ function controlDIV(btn)
           <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
           <% end %>
         </div>
-      </form>
     </div>
   </div>
 </div><!--75% end-->

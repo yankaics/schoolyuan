@@ -1,0 +1,16 @@
+class Settings::ApplicationController < ApplicationController
+  before_action :logged_in_user
+  before_action :correct_user
+  private
+
+  def set_user
+    @user = current_user
+  end
+
+  def current_password_required
+    unless params[:current_password] && @user.authenticate(params[:current_password])
+      flash.now[:warning] = I18n.t('settings.flashes.incorrect_current_password')
+      render :show
+    end
+  end
+end
