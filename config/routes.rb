@@ -19,7 +19,8 @@ Rails.application.routes.draw do
   # 用户
   resources :users do 
     member do
-      get :following, :followers, :settings
+      get :following, :followers, :settings, :update
+      post :settings
     end
   end
 
@@ -27,4 +28,5 @@ Rails.application.routes.draw do
   resources :password_resets, only: [:new, :create, :edit, :update]
   resources :microposts, only:[:create, :destroy]
   resources :relationships, only:[:create, :destroy]
+  resources :settings, only: [:new, :create, :edit, :update]
 end

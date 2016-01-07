@@ -35,21 +35,38 @@ class UsersController < ApplicationController
   end
 
   def settings
-    @user = User.find(params[:id])
+
+    @user = User.find_by_id(params[:id])
+
+    if @user.update_attributes(basic_params)
+      flash[:success] = "基本信息更新成功"
+    elsif @user.update_attributes(accounts_params)
+      flash[:success] = "账户信息更新成功"
+    elsif @user.update_attributes(loved_params)
+      flash[:success] = "恋爱信息更新成功"
+    elsif @user.update_attributes(biography_params)
+      flash[:success] = "背景信息更新成功"
+    else
+     render 'root'
+    end
   end
 
   def edit
     # @user = User.find(params[:id]) # correct已定义
+
   end
 
   def update
-    # @user = User.find(params[:id])
-    if @user.update_attributes(user_params)
-      # 处理更新成功的情况
-      flash[:success] = "个人信息更新成功"
-      redirect_to @user
-    else
-      render 'edit'
+    @user = User.find_by_id(params[:id])
+
+    if @user.update_attributes(basic_params)
+      flash[:success] = "基本信息更新成功"
+    elsif @user.update_attributes(accounts_params)
+      flash[:success] = "账户信息更新成功"
+    elsif @user.update_attributes(loved_params)
+      flash[:success] = "恋爱信息更新成功"
+    elsif @user.update_attributes(biography_params)
+      flash[:success] = "背景信息更新成功"
     end
   end
 
@@ -72,11 +89,27 @@ class UsersController < ApplicationController
     @users = @user.followers.paginate(page: params[:page])
     render 'show_follow'
   end
+
   private
-    def user_params
+
+
+    def accounts_params
       params.require(:user).permit(:name, :email, :password,
                                    :password_confirmation)
     end
+
+    def basic_params
+     params.require(:user).permit(:gender, :age, :height, :hometown, :constellation)
+    end
+
+    def loved_params
+     params.require(:user).permit(:in_love_info, :married_info, :expected_lover)
+    end
+
+    def biography_params
+     params.require(:user).permit(:edu_finished, :final_edu_school, :school_now, :school_now_loc)
+    end
+
 
     # 事前过滤器
     
