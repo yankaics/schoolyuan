@@ -18,6 +18,9 @@ Rails.application.routes.draw do
   post 'login'     =>'sessions#create'
   delete 'logout'  =>'sessions#destroy'
 
+  #用户筛选
+  post 'searchfriends' =>'users#searchfriends'
+
   # 用户
   resources :users do 
     member do

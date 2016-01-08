@@ -78,16 +78,21 @@ class UsersController < ApplicationController
     sex=params[:result][:sex]
     from_height=params[:result][:from_height]
     to_height=params[:result][:to_height]
-    from_weight=params[:result][:from_weight]
-    to_weight=params[:result][:to_weight]
     from_age=params[:result][:from_age]
     to_age=params[:result][:to_age]
+    married=params[:result][:married]
+
+    married_info=false
+    if married=="是"
+      married_info=true
+
+    end
 
 
-    @friends =  sex=="" ? User.all : User.where("sex= ? ",sex)
+    @friends =  sex=="" ? User.all : User.where("gender= ? ",sex)
     @friends = from_height=="" || to_height=="" ? @friends : @friends.where("height BETWEEN ? AND ? ", from_height, to_height)
 
-    ##@friends = from_weight=="" || to_weight=="" ? @friends : @friends.where("weight BETWEEN ? AND ? ", from_weight, to_weight)
+    @friends = married=="" ? @friends : @friends.where("married_info = ?",married_info)
 
     @friends = from_age=="" || to_age=="" ? @friends : @friends.where("age BETWEEN ? AND ? ", from_age, to_age)
 

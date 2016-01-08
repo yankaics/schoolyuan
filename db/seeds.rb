@@ -13,10 +13,24 @@ User.create!(name: "孙琨",
   name = Faker::Name.name
   email = "example-#{n+1}@163.com"
   password = "password"
+  gender="男"
+  if n%3
+    gender="女"
+  end
+  age=n%30+15
+  height=n%30+150
+  married=false
+  if n%5
+    married=true
+  end
   User.create!(name: name,
                email: email,
                password: password,
                password_confirmation: password,
+               gender: gender,
+               age: age,
+               height: height,
+               married_info: married,
                activated: true,
                activated_at: Time.zone.now)
 end
