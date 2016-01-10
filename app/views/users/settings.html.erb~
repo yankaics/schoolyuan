@@ -1,88 +1,32 @@
 <!DOCTYPE html>
-<!-- saved from url=(0035)https://github.com/settings/profile -->
 <html lang="en" class=" is-u2f-enabled">
 <!--HEAD!!!!!!!!!!!!!!!!!!!!!!!11!!!111!!!11!!!!11!!!1hcjhvjvjdvfjdfgvujdfvidvfjdvgjdvfjd-->
-  <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# object: http://ogp.me/ns/object# article: http://ogp.me/ns/article# profile: http://ogp.me/ns/profile#"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="Content-Language" content="en">
-    <meta name="viewport" content="width=1020">
+  <head>
+
+    <style type="text/css">
+      #ym {float:left;width:25%;}
+      #my {border:1px solid #E6E6FA; float:right;width:70%;}
+      /* #basic {padding:0 0 0 20px;}*/
+      #my {background: #DDDDDD}
+      #ym {border:1px solid #E6E6FA; background: #DDDDDD}
+      #basic {background: white}
+      #account {background: white}
+      #love {background: white}
+      #biogra {background: white}
+      #mm {background: white}
+    </style>
     
     
     <title>Your Profile</title>
-    <meta property="fb:app_id" content="1401488693436528">
-
-      <meta property="og:url" content="https://github.com">
-      <meta property="og:site_name" content="GitHub">
-      <meta property="og:title" content="Build software better, together">
-      <meta property="og:description" content="GitHub is where people build software. More than 12 million people use GitHub to discover, fork, and contribute to over 30 million projects.">
-      <meta property="og:image" content="https://assets-cdn.github.com/images/modules/open_graph/github-logo.png">
-      <meta property="og:image:type" content="image/png">
-      <meta property="og:image:width" content="1200">
-      <meta property="og:image:height" content="1200">
-      <meta property="og:image" content="https://assets-cdn.github.com/images/modules/open_graph/github-mark.png">
-      <meta property="og:image:type" content="image/png">
-      <meta property="og:image:width" content="1200">
-      <meta property="og:image:height" content="620">
-      <meta property="og:image" content="https://assets-cdn.github.com/images/modules/open_graph/github-octocat.png">
-      <meta property="og:image:type" content="image/png">
-      <meta property="og:image:width" content="1200">
-      <meta property="og:image:height" content="620">
-      <meta property="twitter:site" content="github">
-      <meta property="twitter:site:id" content="13334762">
-      <meta property="twitter:creator" content="github">
-      <meta property="twitter:creator:id" content="13334762">
-      <meta property="twitter:card" content="summary_large_image">
-      <meta property="twitter:title" content="GitHub">
-      <meta property="twitter:description" content="GitHub is where people build software. More than 12 million people use GitHub to discover, fork, and contribute to over 30 million projects.">
-      <meta property="twitter:image:src" content="https://assets-cdn.github.com/images/modules/open_graph/github-logo.png">
-      <meta property="twitter:image:width" content="1200">
-      <meta property="twitter:image:height" content="1200">
-      <meta name="browser-stats-url" content="https://api.github.com/_private/browser/stats">
-    <meta name="browser-errors-url" content="https://api.github.com/_private/browser/errors">
-    <meta name="pjax-timeout" content="1000">
-    <link rel="sudo-modal" href="https://github.com/sessions/sudo_modal">
-
-    <meta name="msapplication-TileImage" content="/windows-tile.png">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="selected-link" value="/settings/profile" data-pjax-transient="">
-
-    <meta name="google-site-verification" content="KT5gs8h0wvaagLKAVWq8bbeNwnZZK1r1XQysX3xurLU">
-    <meta name="google-analytics" content="UA-3769691-2">
-
-<meta content="collector.githubapp.com" name="octolytics-host"><meta content="github" name="octolytics-app-id"><meta content="79C3BA15:691F:9E23F41:56779AC8" name="octolytics-dimension-request_id"><meta content="14366375" name="octolytics-actor-id"><meta content="dorbodwolf" name="octolytics-actor-login"><meta content="c44670c47d587240f0d77c30839d14ab1d6452429b175d22d7ff05fa46e362c0" name="octolytics-actor-hash">
-
-<meta content="Rails, view, settings#user_profile" data-pjax-transient="true" name="analytics-event">
 
 
-  <meta class="js-ga-set" name="dimension1" content="Logged In">
-
-
-
-        <meta name="hostname" content="github.com">
-    <meta name="user-login" content="dorbodwolf">
-
-        <meta name="expected-hostname" content="github.com">
-
-
-    <meta content="4913234466e0b35d199ac795826b28f88f628fb3" name="form-nonce">
-
-    <link crossorigin="anonymous" href="https://assets-cdn.github.com/assets/github-2cf579a6b28dd247fe7895e0539371525ae8c3bf4e52e45e893bb6b09ee597df.css" media="all" rel="stylesheet">
-    <link crossorigin="anonymous" href="https://assets-cdn.github.com/assets/github2-4280061368be57917309c32e14e922e1b4575c8e586c5aa9f6feeb11280c7a2f.css" media="all" rel="stylesheet">
-    
-    
-
-
-    <meta http-equiv="x-pjax-version" content="e884612b86c6e4ec31651647e12e417b">
-
-      <meta name="description" content="GitHub is where people build software. More than 12 million people use GitHub to discover, fork, and contribute to over 30 million projects.">
 
 <script language="javascript"  type="text/javascript">
 function getID(id)
 {
     return document.getElementById(id);
 }
-function controlDIV(btn)
+/*function controlDIV(btn)
 {
     if(btn.id=="bt_bp")
     {
@@ -94,6 +38,10 @@ function controlDIV(btn)
         getID("account").style.display="none";
         getID("love").style.display="none";
         getID("biogra").style.display="none";
+        getID("bp").style.display="block";
+        getID("as").style.display="none";
+        getID("lf").style.display="none";
+        getID("bg").style.display="none";
     }
     else if(btn.id=="bt_as")
     {
@@ -105,6 +53,10 @@ function controlDIV(btn)
         getID("account").style.display="block";
         getID("love").style.display="none";
         getID("biogra").style.display="none";
+        getID("bp").style.display="none";
+        getID("as").style.display="block";
+        getID("lf").style.display="none";
+        getID("bg").style.display="none";
     }
     else if(btn.id=="bt_lf")
     {
@@ -116,6 +68,10 @@ function controlDIV(btn)
         getID("account").style.display="none";
         getID("love").style.display="block";
         getID("biogra").style.display="none";
+        getID("bp").style.display="none";
+        getID("as").style.display="none";
+        getID("lf").style.display="block";
+        getID("bg").style.display="none";
     }
     else if(btn.id=="bt_bg")
     {
@@ -127,8 +83,13 @@ function controlDIV(btn)
         getID("account").style.display="none";
         getID("love").style.display="none";
         getID("biogra").style.display="block";
+        //getID("biogra").style.visibility="";
+        getID("bp").style.display="none";
+        getID("as").style.display="none";
+        getID("lf").style.display="none";
+        getID("bg").style.display="block";
     }
-}
+}*/
 </script>
 
   </head>
@@ -151,83 +112,48 @@ function controlDIV(btn)
 <div class="page-content container">
   <div class="columns">
 <!--25% DAO HANG-->    
-<div class="column one-fourth" role="navigation">
+<div id="ym" class="column one-fourth" role="navigation">
   <nav class="menu" data-pjax="">
     <h3 class="menu-heading">
       Personal settings
     </h3>
-    <input type="button" id="bt_bp" value="Basic Profile" onclick="controlDIV(this)"/>
-    <input type="button" id="bt_as" value="Account settings" onclick="controlDIV(this)"/>
-    <input type="button" id="bt_lf" value="Love Fairs" onclick="controlDIV(this)"/>
-    <input type="button" id="bt_bg" value="Background" onclick="controlDIV(this)"/>
+    <div id = mm>
+    <form>
+        <li><%= link_to "报上三围", settings_user_path(current_user) %></li>
+        <li><%= link_to "帐号信息", account_user_path(current_user) %></li>
+        <li><%= link_to "单身狗登记", dog_user_path(current_user) %></li>
+        <li><%= link_to "背景信息", bio_user_path(current_user) %></li>
+    </form>
+    <div>
   </nav>
 </div>
 <!--25% end-->
 
 
 <!--75% NEI RONG--> 
-<div id="my", class="column three-fourths">
-  <div class="boxed-group">
-    <h3>Basic Profile</h3>
-    <div  style="" class="boxed-group-inner clearfix">
-      <form accept-charset="UTF-8" action="https://github.com/users/dorbodwolf" class="columns js-uploadable-container js-upload-avatar-image is-default" data-alambic-owner-id="14366375" data-alambic-owner-type="User" data-form-nonce="4913234466e0b35d199ac795826b28f88f628fb3" data-upload-policy-url="/upload/policies/avatars" id="profile_14366375" method="post">
-        <div style="padding:0 0 0 20px;display:block " id="basic" class="column two-thirds">
-          <%= form_for(@user) do |f| %>
+<div  id="my", class="column three-fourths">
+  <div id="a", class="boxed-group">
+    <h3 style="display:block" id="bp">Basic Profile</h3>
+
+    <div  id="aa" class="boxed-group-inner clearfix">
+
+        <div style="display:block " id="basic" class="column two-thirds">
+          <%= form_for(@user, url: update_settings_user_path(current_user)) do |f| %>
           <%=render 'shared/error_messages', object: f.object %>
-          <%= f.label :gender %>
-          <%= f.text_field :name %>
-          <%= f.label :email %>
-          <%= f.text_field :email %>
-          <%= f.label :password %>
-          <%= f.password_field :password %>
-          <%= f.label :password_confirmation, "Confirm Password" %>
-          <%= f.password_field :password_confirmation %>
+          <%= f.label :gender, '性别' %>
+          <%= f.select :gender, ['female','male','others'] %>
+          <%= f.label :age %>
+          <%= f.text_field :age %>
+          <%= f.label :height, '身高（如：175）' %>
+          <%= f.text_field :height %>
+          <%= f.label :hometown %>
+          <%= f.text_field :hometown %>
+          <%= f.label :constellation, '星座' %>
+          <%= f.text_field :constellation %>
           <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
           <% end %>
         </div>
-        <div style="display:none" id="account" class="column two-thirds">
-          <%= form_for(@user) do |f| %>
-          <%= render 'shared/error_messages' %>
-          <%= f.label :name %>
-          <%= f.text_field :name %>
-          <%= f.label :email %>
-          <%= f.text_field :email %>
-          <%= f.label :password %>
-          <%= f.password_field :password %>
-          <%= f.label :password_confirmation, "Confirm Password" %>
-          <%= f.password_field :password_confirmation %>
-          <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
-          <% end %>
-        </div>
-        <div style="display:none" id="love" class="column two-thirds">
-          <%= form_for(@user) do |f| %>
-          <%= render 'shared/error_messages' %>
-          <%= f.label :lover %>
-          <%= f.text_field :name %>
-          <%= f.label :email %>
-          <%= f.text_field :email %>
-          <%= f.label :password %>
-          <%= f.password_field :password %>
-          <%= f.label :password_confirmation, "Confirm Password" %>
-          <%= f.password_field :password_confirmation %>
-          <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
-          <% end %>
-        </div>
-        <div style="display:none" id="biogra" class="column two-thirds">
-          <%= form_for(@user) do |f| %>
-          <%= render 'shared/error_messages' %>
-          <%= f.label :college %>
-          <%= f.text_field :name %>
-          <%= f.label :email %>
-          <%= f.text_field :email %>
-          <%= f.label :password %>
-          <%= f.password_field :password %>
-          <%= f.label :password_confirmation, "Confirm Password" %>
-          <%= f.password_field :password_confirmation %>
-          <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
-          <% end %>
-        </div>
-      </form>
+
     </div>
   </div>
 </div><!--75% end-->

@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  captcha_route
+  resources :comments
+
   # get 'password_resets/new'
 
   # get 'password_resets/edit'
@@ -16,10 +19,16 @@ Rails.application.routes.draw do
   post 'login'     =>'sessions#create'
   delete 'logout'  =>'sessions#destroy'
 
+  #用户筛选
+  post 'searchfriends' =>'users#searchfriends'
+
   # 用户
   resources :users do 
     member do
       get :following, :followers
+      patch :settings, :account, :dog, :bio
+      get :settings, :account, :dog, :bio
+      post :update_settings, :update_account, :update_dog, :update_bio
     end
   end
 

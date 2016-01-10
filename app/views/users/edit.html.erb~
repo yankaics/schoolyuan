@@ -1,30 +1,240 @@
-<!--- 用户编辑页面的视图 --->
-<% provide(:title, "编辑用户") %>
-<h1>更新个人信息</h1>
+<!DOCTYPE html>
+<!-- saved from url=(0035)https://github.com/settings/profile -->
+<html lang="en" class=" is-u2f-enabled">
+<!--HEAD!!!!!!!!!!!!!!!!!!!!!!!11!!!111!!!11!!!!11!!!1hcjhvjvjdvfjdfgvujdfvidvfjdvgjdvfjd-->
+  <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# object: http://ogp.me/ns/object# article: http://ogp.me/ns/article# profile: http://ogp.me/ns/profile#"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Language" content="en">
+    <meta name="viewport" content="width=1020">
+    
+    
+    <title>Your Profile</title>
+    <meta property="fb:app_id" content="1401488693436528">
 
-<div class="row">
- <div class="col-md-6 col-md-offset-3">
-   <%= form_for(@user) do |f| %>
-     <%= render 'shared/error_messages', object: f.object %>
+      <meta property="og:url" content="https://github.com">
+      <meta property="og:site_name" content="GitHub">
+      <meta property="og:title" content="Build software better, together">
+      <meta property="og:description" content="GitHub is where people build software. More than 12 million people use GitHub to discover, fork, and contribute to over 30 million projects.">
+      <meta property="og:image" content="https://assets-cdn.github.com/images/modules/open_graph/github-logo.png">
+      <meta property="og:image:type" content="image/png">
+      <meta property="og:image:width" content="1200">
+      <meta property="og:image:height" content="1200">
+      <meta property="og:image" content="https://assets-cdn.github.com/images/modules/open_graph/github-mark.png">
+      <meta property="og:image:type" content="image/png">
+      <meta property="og:image:width" content="1200">
+      <meta property="og:image:height" content="620">
+      <meta property="og:image" content="https://assets-cdn.github.com/images/modules/open_graph/github-octocat.png">
+      <meta property="og:image:type" content="image/png">
+      <meta property="og:image:width" content="1200">
+      <meta property="og:image:height" content="620">
+      <meta property="twitter:site" content="github">
+      <meta property="twitter:site:id" content="13334762">
+      <meta property="twitter:creator" content="github">
+      <meta property="twitter:creator:id" content="13334762">
+      <meta property="twitter:card" content="summary_large_image">
+      <meta property="twitter:title" content="GitHub">
+      <meta property="twitter:description" content="GitHub is where people build software. More than 12 million people use GitHub to discover, fork, and contribute to over 30 million projects.">
+      <meta property="twitter:image:src" content="https://assets-cdn.github.com/images/modules/open_graph/github-logo.png">
+      <meta property="twitter:image:width" content="1200">
+      <meta property="twitter:image:height" content="1200">
+      <meta name="browser-stats-url" content="https://api.github.com/_private/browser/stats">
+    <meta name="browser-errors-url" content="https://api.github.com/_private/browser/errors">
+    <meta name="pjax-timeout" content="1000">
+    <link rel="sudo-modal" href="https://github.com/sessions/sudo_modal">
 
-     <%= f.label :name, "姓名" %>
-     <%= f.text_field :name, class: 'form-control' %>
+    <meta name="msapplication-TileImage" content="/windows-tile.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="selected-link" value="/settings/profile" data-pjax-transient="">
 
-     <%= f.label :email, "邮箱" %>
-     <%= f.text_field :email, class: 'form-control' %>
+    <meta name="google-site-verification" content="KT5gs8h0wvaagLKAVWq8bbeNwnZZK1r1XQysX3xurLU">
+    <meta name="google-analytics" content="UA-3769691-2">
 
-     <%= f.label :password, "密码" %>
-     <%= f.password_field :password, class: 'form-control' %>
+<meta content="collector.githubapp.com" name="octolytics-host"><meta content="github" name="octolytics-app-id"><meta content="79C3BA15:691F:9E23F41:56779AC8" name="octolytics-dimension-request_id"><meta content="14366375" name="octolytics-actor-id"><meta content="dorbodwolf" name="octolytics-actor-login"><meta content="c44670c47d587240f0d77c30839d14ab1d6452429b175d22d7ff05fa46e362c0" name="octolytics-actor-hash">
 
-     <%= f.label :password_confirmation, "密码确认" %>
-     <%= f.password_field :password_confirmation, class: 'form-control' %>
+<meta content="Rails, view, settings#user_profile" data-pjax-transient="true" name="analytics-event">
 
-     <%= f.submit "保存修改", class:"btn btn-primary" %>
-    <% end %>
 
-    <div class="gravatar_edit">
-      <%= gravatar_for @user %>
-      <a href="http://gravatar.com/emails">修改</a>
-    </div> <!--target="_blank"-->
+  <meta class="js-ga-set" name="dimension1" content="Logged In">
+
+
+
+        <meta name="hostname" content="github.com">
+    <meta name="user-login" content="dorbodwolf">
+
+        <meta name="expected-hostname" content="github.com">
+
+
+    <meta content="4913234466e0b35d199ac795826b28f88f628fb3" name="form-nonce">
+
+    <link crossorigin="anonymous" href="https://assets-cdn.github.com/assets/github-2cf579a6b28dd247fe7895e0539371525ae8c3bf4e52e45e893bb6b09ee597df.css" media="all" rel="stylesheet">
+    <link crossorigin="anonymous" href="https://assets-cdn.github.com/assets/github2-4280061368be57917309c32e14e922e1b4575c8e586c5aa9f6feeb11280c7a2f.css" media="all" rel="stylesheet">
+    
+    
+
+
+    <meta http-equiv="x-pjax-version" content="e884612b86c6e4ec31651647e12e417b">
+
+      <meta name="description" content="GitHub is where people build software. More than 12 million people use GitHub to discover, fork, and contribute to over 30 million projects.">
+
+<script language="javascript"  type="text/javascript">
+function getID(id)
+{
+    return document.getElementById(id);
+}
+function controlDIV(btn)
+{
+    if(btn.id=="bt_bp")
+    {
+        //getID("basic").style.visibility="";
+        //getID("account").style.visibility="hidden";
+        //getID("love").style.visibility="hidden";
+        //getID("biogra").style.visibility="hidden";
+        getID("basic").style.display="block";
+        getID("account").style.display="none";
+        getID("love").style.display="none";
+        getID("biogra").style.display="none";
+    }
+    else if(btn.id=="bt_as")
+    {
+        //getID("basic").style.visibility="hidden";
+        //getID("account").style.visibility="";
+        //getID("love").style.visibility="hidden";
+        //getID("biogra").style.visibility="hidden";
+        getID("basic").style.display="none";
+        getID("account").style.display="block";
+        getID("love").style.display="none";
+        getID("biogra").style.display="none";
+    }
+    else if(btn.id=="bt_lf")
+    {
+        //getID("basic").style.visibility="hidden";
+        //getID("account").style.visibility="hidden";
+        //getID("love").style.visibility="";
+        //getID("biogra").style.visibility="hidden";
+        getID("basic").style.display="none";
+        getID("account").style.display="none";
+        getID("love").style.display="block";
+        getID("biogra").style.display="none";
+    }
+    else if(btn.id=="bt_bg")
+    {
+        //getID("basic").style.visibility="hidden";
+        //getID("account").style.visibility="hidden";
+        //getID("love").style.visibility="hidden";
+        //getID("biogra").style.visibility="";
+        getID("basic").style.display="none";
+        getID("account").style.display="none";
+        getID("love").style.display="none";
+        getID("biogra").style.display="block";
+    }
+}
+</script>
+
+  </head>
+<!--HEAD    end!!!!!!!!!!!!!!!!!!!!!!!11!!!111!!!11!!!!11!endendend-->
+
+
+<!--body begin   line -->
+  <body class="logged_in   env-production linux  page-account">
+
+    <div id="start-of-content" class="accessibility-aid"></div>
+
+      <div id="js-flash-container">
+      </div>
+
+
+    <div role="main" class="main-content">
+
+        <div id="js-pjax-container" class="context-loader-container" data-pjax-container="">
+          
+<div class="page-content container">
+  <div class="columns">
+<!--25% DAO HANG-->    
+<div class="column one-fourth" role="navigation">
+  <nav class="menu" data-pjax="">
+    <h3 class="menu-heading">
+      Personal settings
+    </h3>
+    <input type="button" id="bt_bp" value="Basic Profile" onclick="controlDIV(this)"/>
+    <input type="button" id="bt_as" value="Account settings" onclick="controlDIV(this)"/>
+    <input type="button" id="bt_lf" value="Love Fairs" onclick="controlDIV(this)"/>
+    <input type="button" id="bt_bg" value="Background" onclick="controlDIV(this)"/>
+  </nav>
+</div>
+<!--25% end-->
+
+
+<!--75% NEI RONG--> 
+<div id="my", class="column three-fourths">
+  <div class="boxed-group">
+    <h3>Basic Profile</h3>
+    <div  style="" class="boxed-group-inner clearfix">
+      <form accept-charset="UTF-8" action="https://github.com/users/dorbodwolf" class="columns js-uploadable-container js-upload-avatar-image is-default" data-alambic-owner-id="14366375" data-alambic-owner-type="User" data-form-nonce="4913234466e0b35d199ac795826b28f88f628fb3" data-upload-policy-url="/upload/policies/avatars" id="profile_14366375" method="post">
+        <div style="padding:0 0 0 20px;display:block " id="basic" class="column two-thirds">
+          <%= form_for(@user) do |f| %>
+          <%=render 'shared/error_messages', object: f.object %>
+          <%= f.label :gender %>
+          <%= f.text_field :name %>
+          <%= f.label :email %>
+          <%= f.text_field :email %>
+          <%= f.label :password %>
+          <%= f.password_field :password %>
+          <%= f.label :password_confirmation, "Confirm Password" %>
+          <%= f.password_field :password_confirmation %>
+          <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
+          <% end %>
+        </div>
+        <div style="display:none" id="account" class="column two-thirds">
+          <%= form_for(@user) do |f| %>
+          <%=render 'shared/error_messages', object: f.object %>
+          <%= f.label :name %>
+          <%= f.text_field :name %>
+          <%= f.label :email %>
+          <%= f.text_field :email %>
+          <%= f.label :password %>
+          <%= f.password_field :password %>
+          <%= f.label :password_confirmation, "Confirm Password" %>
+          <%= f.password_field :password_confirmation %>
+          <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
+          <% end %>
+        </div>
+        <div style="display:none" id="love" class="column two-thirds">
+          <%= form_for(@user) do |f| %>
+          <%=render 'shared/error_messages', object: f.object %>
+          <%= f.label :lover %>
+          <%= f.text_field :name %>
+          <%= f.label :email %>
+          <%= f.text_field :email %>
+          <%= f.label :password %>
+          <%= f.password_field :password %>
+          <%= f.label :password_confirmation, "Confirm Password" %>
+          <%= f.password_field :password_confirmation %>
+          <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
+          <% end %>
+        </div>
+        <div style="display:none" id="biogra" class="column two-thirds">
+          <%= form_for(@user) do |f| %>
+          <%=render 'shared/error_messages', object: f.object %>
+          <%= f.label :college %>
+          <%= f.text_field :name %>
+          <%= f.label :email %>
+          <%= f.text_field :email %>
+          <%= f.label :password %>
+          <%= f.password_field :password %>
+          <%= f.label :password_confirmation, "Confirm Password" %>
+          <%= f.password_field :password_confirmation %>
+          <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
+          <% end %>
+        </div>
+      </form>
+    </div>
+  </div>
+</div><!--75% end-->
+
+    </div>
+    </div>
   </div>
 </div>
+</body>
+</html>

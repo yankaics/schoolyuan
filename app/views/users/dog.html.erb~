@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" class=" is-u2f-enabled">
 <!--HEAD!!!!!!!!!!!!!!!!!!!!!!!11!!!111!!!11!!!!11!!!1hcjhvjvjdvfjdfgvujdfvidvfjdvgjdvfjd-->
-  <head>
+  <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# object: http://ogp.me/ns/object# article: http://ogp.me/ns/article# profile: http://ogp.me/ns/profile#">
 
     <style type="text/css">
       #ym {float:left;width:25%;}
@@ -89,7 +89,7 @@ function getID(id)
         getID("lf").style.display="none";
         getID("bg").style.display="block";
     }
-}*/
+}
 </script>
 
   </head>
@@ -133,27 +133,20 @@ function getID(id)
 <!--75% NEI RONG--> 
 <div  id="my", class="column three-fourths">
   <div id="a", class="boxed-group">
-    <h3 style="display:block" id="bp">Basic Profile</h3>
-
+    <h3 style="display:block" id="lf">Love Fairs</h3>
     <div  id="aa" class="boxed-group-inner clearfix">
-
-        <div style="display:block " id="basic" class="column two-thirds">
-          <%= form_for(@user, url: update_settings_user_path(current_user)) do |f| %>
+        <div style="display:block" id="love" class="column two-thirds">
+          <%= form_for(@user, url: dog_user_path(current_user)) do |f| %>
           <%=render 'shared/error_messages', object: f.object %>
-          <%= f.label :gender, '性别' %>
-          <%= f.select :gender, ['female','male','others'] %>
-          <%= f.label :age %>
-          <%= f.text_field :age %>
-          <%= f.label :height, '身高（如：175）' %>
-          <%= f.text_field :height %>
-          <%= f.label :hometown %>
-          <%= f.text_field :hometown %>
-          <%= f.label :constellation, '星座' %>
-          <%= f.text_field :constellation %>
+          <%= f.label :loved?, "你是单身狗吗？" %>
+          <%= f.select :in_love_info, ['yes','no','我是弯的'] %>
+          <%= f.label :married? %>
+          <%= f.select :married_info, ['yes','no'] %> 
+          <%= f.label :expected?, "你期许什么样的恋人？" %>
+          <%= f.text_area :expected_lover  %>
           <%= f.submit "Save changes", class: "btn btn-primary" %>
           <% end %>
         </div>
-
     </div>
   </div>
 </div><!--75% end-->

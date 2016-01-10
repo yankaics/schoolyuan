@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" class=" is-u2f-enabled">
 <!--HEAD!!!!!!!!!!!!!!!!!!!!!!!11!!!111!!!11!!!!11!!!1hcjhvjvjdvfjdfgvujdfvidvfjdvgjdvfjd-->
-  <head>
+  <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# object: http://ogp.me/ns/object# article: http://ogp.me/ns/article# profile: http://ogp.me/ns/profile#">
 
     <style type="text/css">
       #ym {float:left;width:25%;}
@@ -26,7 +26,7 @@ function getID(id)
 {
     return document.getElementById(id);
 }
-/*function controlDIV(btn)
+function controlDIV(btn)
 {
     if(btn.id=="bt_bp")
     {
@@ -89,7 +89,7 @@ function getID(id)
         getID("lf").style.display="none";
         getID("bg").style.display="block";
     }
-}*/
+}
 </script>
 
   </head>
@@ -119,10 +119,10 @@ function getID(id)
     </h3>
     <div id = mm>
     <form>
-        <li><%= link_to "报上三围", settings_user_path(current_user) %></li>
-        <li><%= link_to "帐号信息", account_user_path(current_user) %></li>
-        <li><%= link_to "单身狗登记", dog_user_path(current_user) %></li>
-        <li><%= link_to "背景信息", bio_user_path(current_user) %></li>
+    <input style="border-style: solid; border-width: 0;" type="button" id="bt_bp" value="Basic Profile" onclick="controlDIV(this)"/><input
+    style="border-style: solid; border-width: 0;" type="button" id="bt_as" value="Account settings" onclick="controlDIV(this)"/><input
+    style="border-style: solid; border-width: 0;" type="button" id="bt_lf" value="Love Fairs" onclick="controlDIV(this)"/><input
+    style="border-style: solid; border-width: 0;" type="button" id="bt_bg" value="Background" onclick="controlDIV(this)"/>
     </form>
     <div>
   </nav>
@@ -134,11 +134,13 @@ function getID(id)
 <div  id="my", class="column three-fourths">
   <div id="a", class="boxed-group">
     <h3 style="display:block" id="bp">Basic Profile</h3>
-
+    <h3 style="display:none" id="as">Account settings</h3>
+    <h3 style="display:none" id="lf">Love Fairs</h3>
+    <h3 style="display:none" id="bg">Background</h3>
     <div  id="aa" class="boxed-group-inner clearfix">
 
         <div style="display:block " id="basic" class="column two-thirds">
-          <%= form_for(@user, url: update_settings_user_path(current_user)) do |f| %>
+          <%= form_for(@user) do |f| %>
           <%=render 'shared/error_messages', object: f.object %>
           <%= f.label :gender, '性别' %>
           <%= f.select :gender, ['female','male','others'] %>
@@ -150,10 +152,49 @@ function getID(id)
           <%= f.text_field :hometown %>
           <%= f.label :constellation, '星座' %>
           <%= f.text_field :constellation %>
-          <%= f.submit "Save changes", class: "btn btn-primary" %>
+          <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
           <% end %>
         </div>
-
+        <div style="display:none" id="account" class="column two-thirds">
+          <%= form_for(@user) do |f| %>
+          <%=render 'shared/error_messages', object: f.object %>
+          <%= f.label :name %>
+          <%= f.text_field :name %>
+          <%= f.label :email %>
+          <%= f.text_field :email %>
+          <%= f.label :password %>
+          <%= f.password_field :password %>
+          <%= f.label :password_confirmation, "Confirm Password" %>
+          <%= f.password_field :password_confirmation %>
+          <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
+          <% end %>
+        </div>
+        <div style="display:none" id="love" class="column two-thirds">
+          <%= form_for(@user) do |f| %>
+          <%=render 'shared/error_messages', object: f.object %>
+          <%= f.label :loved?, "你是单身狗吗？" %>
+          <%= f.select :in_love_info, ['yes','no','我是弯的'] %>
+          <%= f.label :married? %>
+          <%= f.select :married_info, ['yes','no'] %> 
+          <%= f.label :expected?, "你期许什么样的恋人？" %>
+          <%= f.text_area :expected_lover  %>
+          <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
+          <% end %>
+        </div>
+        <div style="display:none" id="biogra" class="column two-thirds">
+          <%= form_for(@user) do |f| %>
+          <%=render 'shared/error_messages', object: f.object %>
+          <%= f.label :edu, "我最后获得的学历"%>
+          <%= f.select :edu_finished, ['高中', '本科', '硕士'] %>
+          <%= f.label :college, "获得最后学历的学校是？" %>
+          <%= f.text_field :final_edu_school %>
+          <%= f.label :college_now, "现在在哪所学校？" %>
+          <%= f.text_field :school_now%>
+          <%= f.label :college_location, "现在在哪座城市？" %>
+          <%= f.text_field :school_now_loc %>
+          <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
+          <% end %>
+        </div>
     </div>
   </div>
 </div><!--75% end-->

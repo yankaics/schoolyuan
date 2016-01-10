@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  captcha_route
   resources :comments
 
   # get 'password_resets/new'
@@ -24,7 +25,10 @@ Rails.application.routes.draw do
   # 用户
   resources :users do 
     member do
-      get :following, :followers, :settings
+      get :following, :followers
+
+      get :settings, :account, :dog, :bio
+      patch :update_settings, :update_account, :update_dog, :update_bio
     end
   end
 

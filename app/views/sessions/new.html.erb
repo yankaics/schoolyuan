@@ -11,7 +11,11 @@
        <%= f.label :password,"密码" %>
        <%= link_to "（忘记密码）", new_password_reset_path %>
        <%= f.password_field :password %>
-  
+        <p>请输入验证码 <%= text_field_tag :captcha %></p>
+        <p class="yanzhengma">
+          <%= link_to '', login_path %>
+          <%= captcha_tag %></p>
+
        <%= f.label :remember_me, class: "checkbox inline" do %>
          <%= f.check_box :remember_me %>
          <span>记住我</span>

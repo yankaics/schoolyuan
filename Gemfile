@@ -1,4 +1,4 @@
-source "https://ruby.taobao.org"
+source 'http://rubygems.org'
 
 gem 'rails', '4.2.0'
 gem 'bcrypt', '3.1.7' # 加密
@@ -9,6 +9,12 @@ gem 'carrierwave', '0.10.0' # 处理图片上传，并把图片和微博模型�
 gem 'mini_magick', '3.8.0' # 调整图片尺寸
 gem 'fog', '1.23.0' # 用于在生产环境中上传图片
 
+#验证码,安装rmagick之前需要先安装:sudo apt-get install libmagickwand-dev imagemagick
+#帮助见http://blog.csdn.net/shiralwz/article/details/45892139
+gem 'easy_captcha'
+gem 'rmagick'
+
+
 gem 'will_paginate', '3.0.7' # 分页
 gem 'bootstrap-will_paginate', '0.0.10'
 gem 'bootstrap-sass', '3.2.0.0' # 版式
@@ -18,6 +24,7 @@ gem 'coffee-rails', '4.1.0'
 gem 'jquery-rails', '4.0.0.beta2'
 gem 'turbolinks', '2.3.0'
 gem 'jbuilder', '2.2.3'
+gem 'rb-readline'
 gem 'sdoc', '0.4.0',group: :doc
 
 group :development, :test do
