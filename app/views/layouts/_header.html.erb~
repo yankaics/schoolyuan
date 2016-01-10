@@ -1,0 +1,30 @@
+  <header class="navbar navbar-fixed-top navbar-inverse">
+    <div class="container">
+      <%= link_to "校缘", root_path, id: "logo" %>
+      <nav>
+        <ul class="nav navbar-nav pull-right">  
+        <% if logged_in? %>
+            <li><%= link_to "好友动态",root_path %></li>
+            <li><%= link_to "帮助",help_path %></li>
+            <li><%= link_to "用户列表",users_path %></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">我的 <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                <li><%= link_to "个人主页", current_user %></li>
+                <li><%= link_to "信息修改", edit_user_path(current_user) %></li>
+                <li class="divider"></li>
+                <li>
+                  <%= link_to "退出", logout_path, method: "delete" %>
+                </li>
+              </ul>
+             </li>
+           <% else %>
+                <li><%= link_to "首页",root_path %></li>
+                <li><%= link_to "帮助",help_path %></li>
+                <li><%= link_to "登录", login_path %></li>
+           <% end %>
+        </ul>
+     </nav>
+    </div>
+  </header>

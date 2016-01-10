@@ -1,0 +1,52 @@
+<% provide(:title, '所有用户' ) %>
+<h1>所有用户</h1>
+
+<h4>搜索好友</h4>
+<li class="inde">
+  <strong> 搜索条件：</strong>
+</li>
+<!--粗查找-->
+<div>
+
+  <%= form_for(:result,url: searchfriends_path,:class=>'form_search',remote: true) do |f| %>
+
+      <%= f.label :sex, "性别:   " %>
+      <strong>&nbsp;&nbsp;</strong>
+      <%= f.text_field :sex,:class=>"form_search1" %>
+
+      <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>
+      <%= f.label :from_height,"身高:" %>
+      <strong>&nbsp;&nbsp;</strong>
+      <%= f.number_field :from_height ,:class=>'form_search' %>
+      <%= f.label :to_height,"cm" %>
+      <strong>&nbsp;</strong>
+      <%= f.label :to_height,"到" %>
+      <%= f.number_field :to_height,:class=>'form_search' %>
+      <%= f.label :to_height,"cm" %>
+
+      <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>
+      <%= f.label :married,"婚否:" %>
+      <strong>&nbsp;&nbsp;</strong>
+      <%= f.text_field :married ,:class=>'form_search'%>
+
+      <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>
+      <%= f.label :from_age,"年龄:" %>
+      <strong>&nbsp;&nbsp;</strong>
+      <%= f.number_field :from_age ,:class=>'form_search'%>
+      <%= f.label :to_age,"岁 到" %>
+      <%= f.number_field :to_age ,:class=>'form_search'%>
+      <%= f.label :to_age,"岁" %>
+
+      <%= f.submit "查找",:class=>'form_search'%>
+
+  <% end %>
+
+</div>
+
+<div id="user-div">
+
+  <%= render partial: 'search' %>
+</div>
+
+
+<%= will_paginate %>

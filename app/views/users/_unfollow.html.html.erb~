@@ -1,0 +1,4 @@
+<!----取消关注用户的表单----->
+
+<%= form_for(current_user.active_relationships.find_by(followed_id: @user.id), html: {method: :delete }) do |f| %>
+

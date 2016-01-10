@@ -1,0 +1,146 @@
+gem 'devise'
+gem 'omniauth'
+gem 'omniauth-oauth2'
+
+
+
+下面说一下集成步骤：
+
+1. 创建三个strategies
+lib/omniauth/strategies/douban.rb
+lib/omniauth/strategies/tqq.rb
+lib/omniauth/strategies/weibo.rb
+(三个文件的代码见文件清单)
+需要注意是是，设定client_options中的各种URL，要跟第三方平台的最新文档里的同步。
+ option :client_options, {
+        :site            => "https://graph.qq.com",
+        :authorize_url   => "/oauth2.0/authorize",
+        :token_method    => :get,
+        :token_url       => "/oauth2.0/token",
+        :token_formatter => lambda {|hash|
+          hash[:expires_in]    = hash['expires_in'].to_i
+          hash.delete('expires_in')
+        }
+      }
+
+2. 集成devise.
+
+在config/initializers/devise.rb中注册三个omniauth: 
+在顶部：
+require 'omniauth/strategies/tqq'
+require 'omniauth/strategies/douban'
+require 'omniauth/strategies/weibo'
+在下方：
+  config.omniauth :tqq, 'key', 'a0dbf447esecurt381f8'
+  config.omniauth :douban, 'key', 'fe7a8securta23c729'
+  config.omniauth :weibo, 'key', 'd557adsecurt2e3208f9e73a44'
+
+修改app/models/user.rb
+class User < ActiveRecord::Base
+  devise :database_authenticatable, :registerable, :omniauthable
+如上所示，添加了 :omniauthable
+
+rake db migration, 添加列：
+class AddOmniauthToUsers < ActiveRecord::Migration
+  def change
+    add_column :users, :provider, :string
+    add_column :users, :uid, :integer
+  end
+end
+
+3. 完成回调逻辑
+
+创建一个controller: app/controllers/omniauth_callbaks_controller.rb
+
+class OmniauthCallbacksController < Devise::OmniauthCallbacksController
+   #skip CSRF on create.
+  skip_before_filter :verify_authenticity_token
+
+  def all
+    user = User.from_omniauth(request.env["omniauth.auth"])
+    if user.persisted?
+      sign_in_and_redirect user, notice: 'success'
+    else
+      session["devise.user_attributes"] = user.attributes
+      redirect_to new_user_registration_url
+    end
+  end
+
+  alias_method :tqq, :all
+  alias_method :douban, :all
+  alias_method :weibo, :all
+end
+
+我们注意到：
+这个controller集成了： Devise::OmniauthCallbacksController
+分别为三个第三方别名添加了一个相同的action
+
+然后，根据这个controller,修改app/models/user.rb
+
+class User < ActiveRecord::Base
+  rolify
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable and :omniauthable
+  devise :database_authenticatable, :registerable, :omniauthable,
+         :recoverable, :rememberable, :trackable, :validatable
+
+  has_many :pages
+  has_many :members
+
+  def self.from_omniauth(auth)
+    where(auth.slice(:provider, :uid)).first_or_create do |user|
+      user.provider = auth.provider
+      user.uid = auth.uid
+      user.name = auth.info.nickname
+    end
+  end
+
+  def self.new_with_session(params, session)
+    if session["devise.user_attributes"]
+      new(session["devise.user_attributes"], without_protection: true) do |user|
+        user.attributes = params
+        user.valid?
+      end
+    else
+      super
+    end
+  end
+
+  def password_required?
+    super && provider.blank?
+  end
+
+  def update_with_password(params, *options)
+    if encrypted_password.blank?
+      update_attributes(params, *options)
+    else
+      super
+    end
+  end
+
+end
+
+如上所示，添加了4个辅助方法。
+
+4. 修改routes.rb, 主要是指明回调方法路径
+  devise_for :users, :controllers => {:registrations => "registrations", omniauth_callbacks: "omniauth_callbacks"}
+
+5. 修改View.
+app/views/devise/registrations/edit.html.erb:
+
+  <% if f.object.encrypted_password.present? %>
+      <fieldset>
+        <div class="form-group">
+          <%= f.label :current_password %>
+          <%= f.password_field :current_password, class: 'form-control' %>
+        </div>
+      </fieldset>
+    <% end %>
+
+app/views/devise/sessions/new.html.erb:
+  <div>
+    <%= link_to "QQ账号登录",  user_omniauth_authorize_path(:tqq) %>  |
+    <%= link_to "豆瓣账号登录",  user_omniauth_authorize_path(:douban) %> |
+    <%= link_to "微博账号登录",  user_omniauth_authorize_path(:weibo) %>
+  </div>
+
