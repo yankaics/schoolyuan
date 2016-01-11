@@ -1,0 +1,22 @@
+<article class="reply clearfix">
+        <div class="avatar">
+                <%= link_to "#" do %>
+            <%=image_tag "default_avatar1.png",class: "image-circle" %>
+
+            <% end %>
+            </div>
+
+
+    <div class="body">
+
+      <%= label_tag :username,"用户名" %>
+          <%= text_field_tag(:username) %>
+      <%= label_tag :content,"你的评论" %>
+          <%= text_area_tag(:content) %>
+      <button class="btn" type="submit">
+        提交
+      </button>
+
+    </div>
+
+</article>
