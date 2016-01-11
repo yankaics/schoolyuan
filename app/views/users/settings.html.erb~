@@ -150,7 +150,7 @@ function getID(id)
           <%= f.text_field :hometown %>
           <%= f.label :constellation, '星座' %>
           <%= f.text_field :constellation %>
-          <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
+          <%= f.submit "Save changes", class: "btn btn-primary" %>
           <% end %>
         </div>
 

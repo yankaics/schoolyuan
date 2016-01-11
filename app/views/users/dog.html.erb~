@@ -136,7 +136,7 @@ function getID(id)
     <h3 style="display:block" id="lf">Love Fairs</h3>
     <div  id="aa" class="boxed-group-inner clearfix">
         <div style="display:block" id="love" class="column two-thirds">
-          <%= form_for(@user, url: dog_user_path(current_user)) do |f| %>
+          <%= form_for(@user, url: update_dog_user_path(current_user)) do |f| %>
           <%=render 'shared/error_messages', object: f.object %>
           <%= f.label :loved?, "你是单身狗吗？" %>
           <%= f.select :in_love_info, ['yes','no','我是弯的'] %>
