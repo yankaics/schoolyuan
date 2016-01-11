@@ -125,17 +125,16 @@ class UsersController < ApplicationController
 
   #条件查询好友
   def searchfriends
-    sex=params[:result][:sex]
+    sex=params[:sex]
     from_height=params[:result][:from_height]
     to_height=params[:result][:to_height]
     from_age=params[:result][:from_age]
     to_age=params[:result][:to_age]
-    married=params[:result][:married]
+    married=params[:marrige]
 
     married_info=false
-    if married=="是"
+    if married.nil?
       married_info=true
-
     end
 
 

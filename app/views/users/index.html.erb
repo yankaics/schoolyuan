@@ -10,34 +10,32 @@
 
   <%= form_for(:result,url: searchfriends_path,:class=>'form_search',remote: true) do |f| %>
 
-      <%= f.label :sex, "性别:   " %>
-      <strong>&nbsp;&nbsp;</strong>
-      <%= f.text_field :sex,:class=>"form_search1" %>
+      <%= label_tag(:sex_label, "性别:") %>
+      <%= radio_button_tag(:sex, "男") %>
+      <%= label_tag(:male, "男") %>
+      <%= radio_button_tag(:sex, "女") %>
+      <%= label_tag(:female, "女") %>
 
-      <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>
+      <strong><%= "|" %></strong>
       <%= f.label :from_height,"身高:" %>
-      <strong>&nbsp;&nbsp;</strong>
       <%= f.number_field :from_height ,:class=>'form_search' %>
-      <%= f.label :to_height,"cm" %>
-      <strong>&nbsp;</strong>
-      <%= f.label :to_height,"到" %>
+      <%= f.label :to_height,"cm到" %>
       <%= f.number_field :to_height,:class=>'form_search' %>
       <%= f.label :to_height,"cm" %>
 
-      <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>
-      <%= f.label :married,"婚否:" %>
-      <strong>&nbsp;&nbsp;</strong>
-      <%= f.text_field :married ,:class=>'form_search'%>
-
-      <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>
+      <strong><%= "|" %></strong>
       <%= f.label :from_age,"年龄:" %>
-      <strong>&nbsp;&nbsp;</strong>
       <%= f.number_field :from_age ,:class=>'form_search'%>
-      <%= f.label :to_age,"岁 到" %>
+      <%= f.label :to_age,"岁到" %>
       <%= f.number_field :to_age ,:class=>'form_search'%>
       <%= f.label :to_age,"岁" %>
 
-      <%= f.submit "查找",:class=>'form_search'%>
+      <strong><%= "|" %></strong>
+      <%= label_tag(:marrige, "未婚") %>
+      <%= check_box_tag(:marrige) %>
+
+
+      <%= f.submit "查找",:class=>'form_search1'%>
 
   <% end %>
 
