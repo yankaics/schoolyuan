@@ -147,7 +147,7 @@ function getID(id)
           <%= f.text_field :school_now%>
           <%= f.label :college_location, "现在在哪座城市？" %>
           <%= f.text_field :school_now_loc %>
-          <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
+          <%= f.submit "Save changes", class: "btn btn-primary" %>
           <% end %>
         </div>
     </div>
